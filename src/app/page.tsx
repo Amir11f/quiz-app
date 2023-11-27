@@ -2,17 +2,23 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [randomQuestions, setRandomQuestions] = useState([]);
   const key = process.env.NEXT_PUBLIC_API_KEY;
+  const [randomQuestions, setRandomQuestions] = useState([]);
+  const [limit, setLimit] = useState();
+  const [difficulty, setDifficulty] = useState();
+  const [category, setCategory] = useState();
 
   const fetchRandomQuestions = async () => {
     try {
-      const response = await fetch("https://quizapi.io/api/v1/questions", {
-        method: "GET",
-        headers: {
-          "x-api-key": key!,
-        },
-      });
+      const response = await fetch(
+        `https://quizapi.io/api/v1/questions?limit=${limit}&difficulty=${difficulty}&category=${category}`,
+        {
+          method: "GET",
+          headers: {
+            "x-api-key": key!,
+          },
+        }
+      );
 
       if (response.ok) {
         const result = await response.json();
@@ -40,7 +46,7 @@ export default function Home() {
           Start A Random Quiz
         </div>
         <h3 className=" text-center text-red-700">OR</h3>
-        <div className="w-[80%] h-[50vh] border-2 border-solid border-yellow-600 text-center self-center text-yellow-700" >
+        <div className="w-[80%] h-[50vh] border-2 border-solid border-yellow-600 text-center self-center text-yellow-700">
           choose
         </div>
       </div>
