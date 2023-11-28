@@ -1,5 +1,13 @@
+'use client'
+import { MutableRefObject, useEffect, useRef, useState } from "react"
 
 export default function Sidebar() {
+  const slider = useRef() 
+  const[test , setTest]=useState(10)
+
+  useEffect(()=>{
+    console.log(test)
+  })
   return (
     <div className='h-[100%] w-[20%] text-slate-900  rounded-[3px] flex flex-col gap-[2rem] gradient'>
       <div className="h-[20rem] relative top-8 flex flex-col gap-[2rem] item-center justify-center">
@@ -32,7 +40,8 @@ export default function Sidebar() {
         </div>
         <div className="mt-5 flex self-center flex-col">
           <h1 className="text-center mb-2 text-2xl font-semibold">limit</h1>
-          <input type="range" min={0} max={40} value={0} />
+          <input type="range" min={0} max={20} value={test} ref={slider.current} id="range"/>
+          <p>{}</p>
         </div>
         <button className="w-[14rem] h-[3.5rem] bg-teal-800 rounded-[10px] flex self-center mt-4">
           <h1 className="text-center ">search</h1>
