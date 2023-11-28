@@ -10,26 +10,28 @@ export default function Sidebar() {
           OR
         </button>
       </div>
-      <div className="w-[92%] h-[25rem] bg-red-300 flex self-center flex-col">
-        <div className="gap-[9px] grid auto-rows-auto w-[100%] grid-cols-3 h-[9rem]">
+      <div className="w-[92%] h-[25rem] bg-red-300 flex self-center flex-col rounded-[5px]">
+        <h1 className="text-center mt-3 mb-2 text-2xl font-semibold">categories</h1>
+        <div className="gap-[5px] grid auto-rows-auto w-[100%] grid-cols-3 h-[9rem] pl-2 mt-2">
           <div className="w-[5rem] h-[2.5rem] bg-yellow-400 rounded-[5px]"><p>rem</p></div>
-          <div className="w-[5rem] h-[2.5rem] bg-yellow-400"><p>rem</p></div>
-          <div className="w-[5rem] h-[2.5rem] bg-yellow-400"><p>rem</p></div>
-          <div className="w-[5rem] h-[2.5rem] bg-yellow-400"><p>rem</p></div>
-          <div className="w-[5rem] h-[2.5rem] bg-yellow-400"><p>rem</p></div>
-          <div className="w-[5rem] h-[2.5rem] bg-yellow-400"><p>rem</p></div>
-          <div className="w-[5rem] h-[2.5rem] bg-yellow-400"><p>rem</p></div>
-          <div className="w-[5rem] h-[2.5rem] bg-yellow-400"><p>rem</p></div>    
+          <div className="w-[5rem] h-[2.5rem] bg-yellow-400 rounded-[5px]"><p>rem</p></div>
+          <div className="w-[5rem] h-[2.5rem] bg-yellow-400 rounded-[5px]"><p>rem</p></div>
+          <div className="w-[5rem] h-[2.5rem] bg-yellow-400 rounded-[5px]"><p>rem</p></div>
+          <div className="w-[5rem] h-[2.5rem] bg-yellow-400 rounded-[5px]"><p>rem</p></div>
+          <div className="w-[5rem] h-[2.5rem] bg-yellow-400 rounded-[5px]"><p>rem</p></div>
+          <div className="w-[5rem] h-[2.5rem] bg-yellow-400 rounded-[5px]"><p>rem</p></div>
+          <div className="w-[5rem] h-[2.5rem] bg-yellow-400 rounded-[5px]"><p>rem</p></div>
         </div>
-        <div className="flex flex-col mt-[2rem] ">
-          <h2>difficality</h2>
+        <div className="flex flex-col mt-[.7rem] ">
+          <h2 className="text-center text-2xl font-semibold">difficality</h2>
           <div className="grid grid-cols-3 mt-3">
             <div className="w-[5rem] h-[2.5rem] bg-yellow-400 rounded-[5px]"><p>rem</p></div>
             <div className="w-[5rem] h-[2.5rem] bg-yellow-400 rounded-[5px]"><p>rem</p></div>
             <div className="w-[5rem] h-[2.5rem] bg-yellow-400 rounded-[5px]"><p>rem</p></div>
           </div>
         </div>
-        <div>
+        <div className="mt-5 flex self-center flex-col">
+          <h1 className="text-center mb-2 text-2xl font-semibold">limit</h1>
           <input type="range" min={0} max={40} value={0} />
         </div>
       </div>
