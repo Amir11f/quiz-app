@@ -1,4 +1,5 @@
 "use client";
+import Sidebar from "@/components/sidebar";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -36,20 +37,8 @@ export default function Home() {
   }, [randomQuestions]);
 
   return (
-    <div className="w-[100%] h-[100vh] border-2 border-solid border-red-500">
-      <div className="flex flex-col item-center justify-center w-[100%]">
-        <h1 className="text-center">Quiz App | Start a Random Quiz</h1>
-        <div
-          className="w-fit text-center mx-auto cursor-pointer border-2 border-solid border-black-500 p-[10px]"
-          onClick={fetchRandomQuestions}
-        >
-          Start A Random Quiz
-        </div>
-        <h3 className=" text-center text-red-700">OR</h3>
-        <div className="w-[80%] h-[50vh] border-2 border-solid border-yellow-600 text-center self-center text-yellow-700">
-          choose
-        </div>
-      </div>
+    <div className="w-full bg-woman-in-black bg-contain bg-right bg-no-repeat flex flex-col z-10 overscroll-none max-h-screen h-screen overflow-y-hidden mainBackground">
+      <Sidebar />
     </div>
   );
 }
