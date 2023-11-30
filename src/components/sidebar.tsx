@@ -1,18 +1,49 @@
 'use client'
 import { MutableRefObject, useEffect, useRef, useState } from "react"
-
+import axios from "axios";
 export default function Sidebar() {
-  const slider = useRef() 
-  const[test , setTest]=useState(10)
+  const key = process.env.NEXT_PUBLIC_API_KEY;
+  const [randomQuestions, setRandomQuestions] = useState([]);
+  const [limit, setLimit] = useState();
+  const [difficulty, setDifficulty] = useState();
+  const [category, setCategory] = useState();
 
-  useEffect(()=>{
-    console.log(test)
-  })
+  const fetchRandomQuestions = async () => {
+    try {
+      const response = await fetch(
+        `https://quizapi.io/api/v1/questions`,
+        {
+          method: "GET",
+          headers: {
+            "x-api-key": 'ZKYbWtrl2S4dGFlpdX0V2g2CCK1BJET4DuNmJ8jQ',
+          },
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        setRandomQuestions(result);
+      } else {
+        console.log("Failed to fetch");
+      }
+    } catch (error) {
+      console.log("ERROR :", error);
+    }
+  };
+
+  useEffect(() => {
+    console.log(randomQuestions);
+  }, [randomQuestions]);
+
+  const need = '?limit=${limit}&difficulty=${difficulty}&category=${category}'
+
+
+
   return (
     <div className='h-[100%] w-[20%] text-slate-900  rounded-[3px] flex flex-col gap-[2rem] gradient'>
       <div className="h-[20rem] relative top-8 flex flex-col gap-[2rem] item-center justify-center">
         <button className="w-[80%] h-[5rem] buttonGradient flex self-center reletive top-[5rem] rounded-[8px] text-gray-800 font-bold text-[30px] justify-center">
-          <p className="text-center flex self-center justify-self-center">random quiz</p>
+          <p className="text-center flex self-center justify-self-center" onClick={fetchRandomQuestions}  >random quiz</p>
         </button>
         <button className="h-[5rem] w-[5rem]  text-[30px] bg-red-800 text-center self-center rounded-[10px]">
           OR
@@ -40,11 +71,10 @@ export default function Sidebar() {
         </div>
         <div className="mt-5 flex self-center flex-col">
           <h1 className="text-center mb-2 text-2xl font-semibold">limit</h1>
-          <input type="range" min={0} max={20} value={test} ref={slider.current} id="range"/>
-          <p>{}</p>
+          <input type="range" min={0} max={20} id="range"/>
         </div>
-        <button className="w-[14rem] h-[3.5rem] bg-teal-800 rounded-[10px] flex self-center mt-4">
-          <h1 className="text-center ">search</h1>
+        <button className="w-[14rem] h-[3.5rem] bg-teal-800 rounded-[10px] flex self-center mt-4 text-center">
+          search
         </button>
       </div>
     </div>
