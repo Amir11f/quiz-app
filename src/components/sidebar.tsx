@@ -55,7 +55,8 @@ export default function Sidebar() {
     }
   };
 
-  
+  console.log(category)
+  console.log(difficulty)
 
 
   return (
@@ -73,7 +74,7 @@ export default function Sidebar() {
           OR
         </button>
       </div>
-      <div className="w-[92%] h-[34rem] bg-blue-300 flex self-center flex-col rounded-[5px]">
+      <div className="w-[92%] h-[38rem] bg-blue-300 flex self-center flex-col rounded-[5px]">
         <h1 className="text-center mt-3 -mb-2 text-[28px] font-semibold relative bottom-2">
           categories
         </h1>
@@ -82,46 +83,52 @@ export default function Sidebar() {
             <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 border-t-2 text-center text-[18px]" onClick={()=>setCategory('Linux')} >Linux</p>
           </div>
           <div className="w-[auto] rounded-[5px] border-b-2">
-            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('Networking')}>Networking</p>
+            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('BASH')}>BASH</p>
           </div>
           <div className="w-[auto] rounded-[5px] border-b-2">
-            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('DevOps')}>DevOps</p>
+            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('PHP')}>PHP</p>
           </div>
           <div className="w-[auto] rounded-[5px] border-b-2">
-            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('Programming')}> Programming </p>
+            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('HTML')}> HTML </p>
           </div>
           <div className="w-[auto] rounded-[5px] border-b-2">
-            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('Cloud')}>Cloud</p>
+            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('MySQL')}>MySQL</p>
           </div>
           <div className="w-[auto] rounded-[5px] border-b-2">
             <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('Docker')}>Docker</p>
           </div>
           <div className="w-[auto] rounded-[5px] border-b-2">
+            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('WordPress')}>WordPress</p>
+          </div>
+          <div className="w-[auto] rounded-[5px] border-b-2">
             <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('Kubernetes')}>Kubernetes</p>
           </div>
           <div className="w-[auto] rounded-[5px] border-b-2">
-            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('And lots more')}>And lots more</p>
+            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('JavaScript')}>JavaScript</p>
+          </div>
+          <div className="w-[auto] rounded-[5px] border-b-2">
+            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('DevOps')}>DevOps</p>
           </div>
         </div>
-        <div className="flex flex-col mt-[.7rem] ml-2">
+        <div className="flex flex-col relative top-[5rem] ml-2">
           <h2 className="text-center text-[28px] font-semi18ld font-bold">difficality</h2>
           <div className="grid grid-cols-3 mt-3">
             <div className="w-[5rem]  bg-red-200 font-bold cursor-pointer  hover:bg-green-300 text-[18px] rounded-[5px]">
-              <p className="ml-[2px] text-center h-[auto] hover:text-red-800 text-[18px]" onClick={()=>{setDifficulty('Easy')}}>easy</p>
+              <p className="ml-[2px] text-center h-[auto] hover:text-red-800 text-[18px]" onClick={()=>{setDifficulty('Easy')}}>Easy</p>
             </div>
             <div className="w-[5rem]  bg-red-200 font-bold  cursor-pointer  hover:bg-green-300 text-[18px]  rounded-[5px]">
               <p className="ml-[2px] text-center h-[auto] hover:text-red-800 text-[18px]" onClick={()=>{setDifficulty('Medium')}}>Medium </p>
             </div>
             <div className="w-[5rem]  bg-red-200  font-bold cursor-pointer hover:bg-green-300 text-[18px] rounded-[5px]">
-              <p className="ml-[2px] text-center h-[auto] hover:text-red-800 text-[18px]" onClick={()=>{setDifficulty('Hard')}}>hard</p>
+              <p className="ml-[2px] text-center h-[auto] hover:text-red-800 text-[18px]" onClick={()=>{setDifficulty('Hard')}}>Hard</p>
             </div>
           </div>
         </div>
-        <div className=" flex self-center flex-col">
+        <div className=" flex self-center flex-col relative top-[5rem]">
           <h1 className="text-center mt-3 -mb-2 text-[28px] font-semibold relative bottom-2">limit</h1>
           <input type="range" min={0} max={20} id="range" />
         </div>
-        <button className="w-[14rem] h-[3.5rem] bg-teal-800 rounded-[10px] flex justify-center items-center text-[30px] font-bold text-green-100 self-center hover:shadow-2xl hover:shadow-[0 20px 25px -5px rgb(0 0 0 / 0.1)] mt-4 text-center " onClick={fetchQuestions}>
+        <button className="w-[14rem] relative top-[5rem] h-[3.5rem] bg-teal-800 rounded-[10px] flex justify-center items-center text-[30px] font-bold text-green-100 self-center hover:shadow-2xl hover:text-blue-300 mt-4 text-center " onClick={fetchQuestions}>
           search
         </button>
       </div>
