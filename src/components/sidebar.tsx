@@ -121,7 +121,7 @@ export default function Sidebar() {
           <h1 className="text-center mt-3 -mb-2 text-[28px] font-semibold relative bottom-2">limit</h1>
           <input type="range" min={0} max={20} id="range" />
         </div>
-        <button className="w-[14rem] h-[3.5rem] bg-teal-800 rounded-[10px] flex self-center mt-4 text-center " onClick={fetchQuestions}>
+        <button className="w-[14rem] h-[3.5rem] bg-teal-800 rounded-[10px] flex justify-center items-center text-[30px] font-bold text-green-100 self-center hover:shadow-2xl hover:shadow-[0 20px 25px -5px rgb(0 0 0 / 0.1)] mt-4 text-center " onClick={fetchQuestions}>
           search
         </button>
       </div>
