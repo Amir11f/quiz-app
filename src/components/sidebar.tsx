@@ -1,5 +1,5 @@
 "use client";
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState , createContext} from "react";
 // import axios from "axios";
 export default function Sidebar() {
   const key = process.env.NEXT_PUBLIC_API_KEY;
@@ -35,10 +35,11 @@ export default function Sidebar() {
 
   const fetchQuestions = async () => {
     try {
-      const responseC= await fetch(`https://quizapi.io/api/v1/questions?limit=${limit}&difficulty=${difficulty}&category=${category}`, {
+      const responseC= await fetch(`https://quizapi.io/api/v1/questions?difficulty=${difficulty}&category=HTML`, {
         method: "GET",
         headers: {
-          "x-api-key": key!,
+          "x-api-key": 'ZKYbWtrl2S4dGFlpdX0V2g2CCK1BJET4DuNmJ8jQ',
+          "request-mode" : 'no-cors'
         },
       });
       console.log('first')
@@ -83,10 +84,10 @@ export default function Sidebar() {
             <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 border-t-2 text-center text-[18px]" onClick={()=>setCategory('Linux')} >Linux</p>
           </div>
           <div className="w-[auto] rounded-[5px] border-b-2">
-            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('BASH')}>BASH</p>
+            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('Bash')}>BASH</p>
           </div>
           <div className="w-[auto] rounded-[5px] border-b-2">
-            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('PHP')}>PHP</p>
+            <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('Networking')}>Networking</p>
           </div>
           <div className="w-[auto] rounded-[5px] border-b-2">
             <p className="ml-[2px] hover:text-red-900 font-bold cursor-pointer  h-7 text-center text-[18px]" onClick={()=>setCategory('HTML')}> HTML </p>
